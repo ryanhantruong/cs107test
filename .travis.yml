@@ -1,0 +1,14 @@
+language: python
+python:
+  - "3.6"      # current default Python on Travis CI
+# command to install dependencies
+install:
+#  - pip install -r requirements.txt
+  - pip install --upgrade pytest-cov pytest
+  - pip install codecov
+# command to run tests
+script:
+  - pytest tests --cov-report term --cov=src/
+after_success:
+#  - echo "$CODECOV_TOKEN"
+#  - codecov
